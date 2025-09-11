@@ -16,7 +16,7 @@ const HeroSection = forwardRef((props, ref) => {
         className="absolute inset-0 w-full h-full object-cover blur-[3px]"
       ></video>
 
-      <div className="absolute flex flex-col justify-center items-center w-full  h-full md:w-1/2 md:pl-5">
+      <div className="absolute flex flex-col justify-center items-center w-full h-full xl:w-1/2 ">
         <div className="z-2 text-white flex flex-col gap-5">
           <h1 className="text-5xl sm:text-8xl">Daniel Agüero</h1>
           <h2 className="text-3xl">Software engineer</h2>

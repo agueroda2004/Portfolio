@@ -1,5 +1,6 @@
 import React, { forwardRef } from "react";
 import { motion, useInView } from "framer-motion";
+import { NavLink } from "react-router-dom";
 
 const TopStack = forwardRef((props, ref) => {
   const isInView = useInView(ref, { once: true });
@@ -15,22 +16,19 @@ const TopStack = forwardRef((props, ref) => {
         }
       `}
       </style>
-      <section
-        className="min-h-screen w-full bg-black relative overflow-hidden box-border"
-        ref={ref}
-      >
+      <section className="h-screen w-full bg-black relative overflow-hidden  box-border">
         {/* React */}
         <motion.div
           initial={{ opacity: 0, x: -200 }}
           animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -200 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.8 }}
-          className="w-[150px] h-[300px] md:w-[400px] md:h-[650px] bg-[#51BCD8]/40 rounded-[10px] absolute top-0 md:top-25 rotate-12 shadow-[0_0_20px_1px_#51BCD8] z-2"
+          className="w-52 h-72 md:w-72 md:h-128 bg-[#51BCD8]/40 rounded-[10px] absolute top-0 md:top-30 rotate-12 shadow-[0_0_20px_1px_#51BCD8] z-2 xl:w-110 xl:h-180"
         >
           <svg
             viewBox="0 0 24 24"
             fill="white"
             xmlns="http://www.w3.org/2000/svg"
-            className="fill-white absolute md:-right-35 md:-top-30 md:h-120 h-50 animate-pulse -right-15 -top-10"
+            className="fill-white absolute md:-right-25 md:-top-10 md:h-80 h-50 animate-pulse -right-15 -top-10 xl:h-130 xl:-top-25 xl:-right-30"
             filter="url(#shadow-react)"
           >
             <defs>
@@ -58,17 +56,21 @@ const TopStack = forwardRef((props, ref) => {
               fill="#53C1DE"
             ></path>
           </svg>
-          <h1 className="text-white md:text-9xl text-7xl font-semibold custom-shadow-react absolute bottom-10 -right-25 font-poppins">
+          <h1 className="text-white md:text-8xl text-7xl font-semibold custom-shadow-react absolute bottom-10 -right-25 font-poppins">
             React
           </h1>
         </motion.div>
         {/* View All */}
-        <div className="flex justify-center items-center w-full min-h-screen flex-col gap-10 absolute ">
-          <div className="text-white text-7xl md:text-9xl font-light text-center hidden md:block">
+        <div
+          className="flex justify-center items-center w-full min-h-screen flex-col gap-10 absolute "
+          ref={ref}
+        >
+          <div className="text-white text-7xl md:text-9xl font-light text-center hidden lg:block">
             Top <br />
             <span className="font-semibold">Stack</span>
           </div>
-          <button
+          <NavLink
+            to="/stack"
             className="border border-white/70 px-20 py-3 rounded-[10px] font-light hover:-translate-y-[1px] 
         active:translate-y-[1px] transition-all duration-200 cursor-pointer hover:bg-white hover:text-black/90 bg-black text-white flex flex-row justify-center items-center"
           >
@@ -86,21 +88,21 @@ const TopStack = forwardRef((props, ref) => {
                 fill="currentColor"
               ></path>
             </svg>
-          </button>
+          </NavLink>
         </div>
         {/* Node.js */}
         <motion.div
           initial={{ opacity: 0, x: 200 }} // Empieza a la derecha
           animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 200 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.8 }}
-          className="w-[150px] h-[300px] md:w-[400px] md:h-[650px] bg-[#83CD29]/40 rounded-[10px] absolute -rotate-12 md:bottom-10 md:right-0 shadow-[0_0_20px_1px_#83CD29] bottom-0 right-0 z-1"
+          className="w-52 h-[300px] md:w-72 md:h-128 bg-[#83CD29]/40 rounded-[10px] absolute -rotate-12 md:bottom-10 md:right-0 shadow-[0_0_20px_1px_#83CD29] bottom-0 right-0 z-1 xl:w-110 xl:h-180"
         >
           <svg
             viewBox="0 0 48 48"
             xmlns="http://www.w3.org/2000/svg"
             fill="#83CD29"
             filter="url(#shadow-node)"
-            className="absolute md:h-110 h-50 md:-right-30 md:-top-30 animate-pulse -right-15 -top-10"
+            className="absolute md:h-80 h-50 md:-right-20 md:-top-10 animate-pulse -right-15 -top-10 xl:h-130 xl:-top-30 xl:-right-40"
           >
             <defs>
               <filter

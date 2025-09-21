@@ -9,7 +9,7 @@ function hexToRgba(hex, alpha = 0.4) {
   return `rgba(${r},${g},${b},${alpha})`;
 }
 
-const Carrousel = ({ data, widht }) => {
+const Carrousel = ({ data }) => {
   return (
     <div className="w-full flex justify-center">
       <div className="relative w-full py-10 h-[500px]">
@@ -37,8 +37,8 @@ const Carrousel = ({ data, widht }) => {
         </Marquee>
 
         {/* Gradientes laterales */}
-        <div className="absolute left-0 top-0 h-full w-16 pointer-events-none bg-gradient-to-r from-white to-transparent z-2" />
-        <div className="absolute right-0 top-0 h-full w-16 pointer-events-none bg-gradient-to-l from-white to-transparent z-2" />
+        <div className="absolute left-0 top-0 h-full w-16 pointer-events-none bg-gradient-to-r from-black to-transparent z-2" />
+        <div className="absolute right-0 top-0 h-full w-16 pointer-events-none bg-gradient-to-l from-black to-transparent z-2" />
       </div>
     </div>
   );

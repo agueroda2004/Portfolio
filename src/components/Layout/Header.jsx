@@ -1,7 +1,8 @@
 import React, { useEffect, useReducer, useRef } from "react";
 import Logo from "../../assets/logo.svg";
-import { useLocation } from "react-router-dom";
+import { useLocation, useMatch, useSearchParams } from "react-router-dom";
 import { NavLink } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const initialState = {
   inicio: true,
@@ -23,6 +24,19 @@ const Header = ({ heroRef, stackRef, aboutRef, projectsRef }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const navHeader = useRef(null);
   const location = useLocation();
+  const isProjectPage = useMatch("/project/:id");
+  const className = isProjectPage ? "invert" : "";
+
+  function handleClick() {
+    toast.success("Working...", {
+      icon: "🚀",
+      style: {
+        borderRadius: "10px",
+        background: "#333",
+        color: "#fff",
+      },
+    });
+  }
 
   const scrollTo = (ref) =>
     ref.current?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -106,9 +120,9 @@ const Header = ({ heroRef, stackRef, aboutRef, projectsRef }) => {
           <img
             src={Logo}
             alt="logo"
-            className={`${state.inicio ? "" : state.stack ? "" : "invert"} ${
-              location.pathname !== "/" ? "invert" : ""
-            }`}
+            className={`${
+              state.inicio ? "" : state.stack ? "" : "invert"
+            } ${className}`}
           />
         </NavLink>
 
@@ -171,6 +185,7 @@ const Header = ({ heroRef, stackRef, aboutRef, projectsRef }) => {
             <button
               className={`border border-black/70 px-5 py-2 rounded-[10px] font-light hover:-translate-y-[1px] 
         active:translate-y-[1px] transition-all duration-200 cursor-pointer hover:bg-white hover:text-black bg-black text-white hidden md:flex`}
+              onClick={handleClick}
             >
               Download CSV
             </button>

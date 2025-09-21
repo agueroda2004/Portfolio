@@ -1,6 +1,17 @@
 import React, { forwardRef } from "react";
+import toast from "react-hot-toast";
 
 const HeroSection = forwardRef((props, ref) => {
+  function handleClick() {
+    toast.success("Working...", {
+      icon: "🚀",
+      style: {
+        borderRadius: "10px",
+        background: "#333",
+        color: "#fff",
+      },
+    });
+  }
   return (
     <section className="w-full min-h-screen relative" ref={ref}>
       {/* Overlay */}
@@ -23,8 +34,9 @@ const HeroSection = forwardRef((props, ref) => {
           <button
             className="bg-black px-5 py-3 rounded-[10px] font-light max-w-[150px] cursor-pointer hover:-translate-y-[2px] 
         active:translate-y-[2px] hover:bg-white hover:text-black transition-all duration-300"
+            onClick={handleClick}
           >
-            Donwload CSV
+            Download CSV
           </button>
         </div>
       </div>

@@ -1,30 +1,22 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useMatch } from "react-router-dom";
 
 const Footer = () => {
   const location = useLocation();
+  const isProjectPage = useMatch("/project/:id");
+  const className = isProjectPage
+    ? "bg-white border-black/10 text-black"
+    : "bg-black border-white/10 text-white";
   return (
     <div
-      className={`w-full flex flex-col justify-center items-center pt-30 pb-20 lg:pt-20 lg:pb-10 gap-10 border-t  ${
-        location.pathname === "/"
-          ? "bg-black border-white/10"
-          : "bg-white border-black/10"
-      }`}
+      className={`w-full flex flex-col justify-center items-center pt-30 pb-20 lg:pt-20 lg:pb-10 gap-10 border-t   ${className}`}
     >
-      <p
-        className={`font-poppins text-5xl  ${
-          location.pathname === "/" ? "text-white/50" : "text-black/50"
-        }`}
-      >
-        DevDaniel
-      </p>
+      <p className={`font-poppins text-5xl  text-current/50`}>DevDaniel</p>
       {/* Contactos */}
       <div
-        className={` font-poppins w-full flex flex-col justify-center items-center gap-5 max-w-64 ${
-          location.pathname === "/" ? "text-white/50" : "text-black/50"
-        }`}
+        className={` font-poppins w-full flex flex-col justify-center items-center gap-5 max-w-64  text-current/50`}
       >
-        <p>Contacto</p>
+        <p>Contact</p>
         <p className="font-poppins underline flex flex-row gap-1">
           <svg
             viewBox="0 0 24 24"

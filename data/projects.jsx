@@ -36,7 +36,7 @@ export const Projects = [
     id: 1,
     name: "QuickStay",
     video:
-      "https://ik.imagekit.io/5zi86k8wt/portfolio/Hotel%20Booking/Video.mp4?updatedAt=1757468088385",
+      "https://ik.imagekit.io/5zi86k8wt/portfolio/Hotel%20Booking/Video.mp4?updatedAt=1758290458970",
     images: [
       "https://ik.imagekit.io/5zi86k8wt/portfolio/Hotel%20Booking/Img1.png?updatedAt=1756958332941",
       "https://ik.imagekit.io/5zi86k8wt/portfolio/Hotel%20Booking/Img3.png?updatedAt=1757467780491",
@@ -517,7 +517,7 @@ export const Projects = [
       "https://ik.imagekit.io/5zi86k8wt/portfolio/Netflix%20Clone/Img1.png?updatedAt=1757560049771",
     ],
     video:
-      "https://ik.imagekit.io/5zi86k8wt/portfolio/Hotel%20Booking/Video.mp4?updatedAt=1757468088385",
+      "https://ik.imagekit.io/5zi86k8wt/portfolio/Netflix%20Clone/Video.mp4?updatedAt=1758290554863",
     stack: [
       {
         svg: (
@@ -753,8 +753,7 @@ export const Projects = [
     name: "CoolStreet",
     description:
       "A full-stack e-commerce platform built from the ground up to showcase modern web development skills. This project leverages Angular for a dynamic and responsive frontend, a Node.js backend for handling product data and user authentication, and Tailwind CSS for a clean, utility-first design. It's a testament to my ability to build a robust and scalable application.",
-    video:
-      "https://ik.imagekit.io/5zi86k8wt/portfolio/Hotel%20Booking/Video.mp4?updatedAt=1757468088385",
+    video: "",
     images: [
       "https://ik.imagekit.io/5zi86k8wt/portfolio/CoolStreet/Img1.png?updatedAt=1756958221509",
       "https://ik.imagekit.io/5zi86k8wt/portfolio/CoolStreet/Img2.png?updatedAt=1757560189846",
@@ -1174,7 +1173,7 @@ export const Projects = [
     description:
       "A full-stack car rental platform developed to demonstrate my skills in modern web application development. This project uses React for a dynamic user interface, a Node.js backend to handle reservations and vehicle data, and MongoDB for flexible and scalable data storage. It's a clear example of my ability to build a robust, end-to-end application.",
     video:
-      "https://ik.imagekit.io/5zi86k8wt/portfolio/Hotel%20Booking/Video.mp4?updatedAt=1757468088385",
+      "https://ik.imagekit.io/5zi86k8wt/portfolio/Car%20Rental/Video.mp4?updatedAt=1758290215241",
     images: [
       "https://ik.imagekit.io/5zi86k8wt/portfolio/Car%20Rental/Img6.png?updatedAt=1756958647578",
       "https://ik.imagekit.io/5zi86k8wt/portfolio/Car%20Rental/Img3.png?updatedAt=1757560457840",
@@ -1493,7 +1492,7 @@ export const Projects = [
     description:
       "A single-page website created for a senior citizens' home as part of a community service project. Built with React for a responsive user experience and styled with Tailwind CSS for a clean, modern design. This project highlights my ability to use technology to serve a social purpose, creating a digital platform that is accessible and easy to navigate for all users.",
     video:
-      "https://ik.imagekit.io/5zi86k8wt/portfolio/Hotel%20Booking/Video.mp4?updatedAt=1757468088385",
+      "https://ik.imagekit.io/5zi86k8wt/portfolio/Hogar%20Puriscal/Video.mp4?updatedAt=1758290637255",
     images: [
       "https://ik.imagekit.io/5zi86k8wt/portfolio/Hogar%20Puriscal/Img2.png?updatedAt=1756957839415",
       "https://ik.imagekit.io/5zi86k8wt/portfolio/Hogar%20Puriscal/Img4.png?updatedAt=1757560626382",

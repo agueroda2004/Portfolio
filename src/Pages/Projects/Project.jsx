@@ -1,21 +1,43 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Projects } from "../../../data/projects";
+import { useMediaPreLoader } from "./Hooks/useMediaPreLoader";
+import NotFound from "../Home/NotFound";
 
 const Project = () => {
   const { id } = useParams();
   const project = Projects.find((proj) => proj.id === parseInt(id));
 
+  if (!project) {
+    return <NotFound />;
+  }
+
+  const medialoaded = useMediaPreLoader(project.images, project.video);
+
   // inicializamos el main como un video
-  const [mainMedia, setMainMedia] = useState({
-    type: "video",
-    src: project.video,
-  });
-  const [isLoading, setIsLoading] = useState(true);
+  const [mainMedia, setMainMedia] = useState(
+    project.video
+      ? {
+          type: "video",
+          src: project.video,
+        }
+      : {
+          type: "image",
+          src: project.images[0],
+        }
+  );
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  if (!medialoaded) {
+    return (
+      <div className="min-h-screen w-full flex justify-center items-center">
+        <div className="w-12 h-12 border-4 border-t-black border-gray-300 rounded-full animate-spin"></div>
+      </div>
+    );
+  }
 
   return (
     <>
@@ -26,29 +48,18 @@ const Project = () => {
           <div className="flex flex-col items-center space-y-4 min-h-screen">
             {/* Media principal */}
             <div className="w-full border border-black/10 rounded-[5px] md:px-5 xl:px-0">
-              {isLoading && (
-                <div className="h-[70vh] flex items-center justify-center bg-white/10 ">
-                  <div className="w-12 h-12 border-4 border-t-black border-gray-300 rounded-full animate-spin"></div>
-                </div>
-              )}
-
               {mainMedia.type === "image" ? (
-                !isLoading && (
-                  <img
-                    src={mainMedia.src}
-                    alt="Main"
-                    className="w-full rounded-[5px] transition-opacity duration-500"
-                  />
-                )
+                <img
+                  src={mainMedia.src}
+                  alt="Main"
+                  className="w-full rounded-[5px] transition-opacity duration-500"
+                />
               ) : (
                 <video
                   src={mainMedia.src}
                   controls
                   muted
                   className="w-full rounded-[5px]"
-                  onLoadedData={() => {
-                    setIsLoading(false);
-                  }}
                 />
               )}
             </div>
@@ -56,13 +67,8 @@ const Project = () => {
             {/* Thumbnails */}
             <div className="flex w-full flex-wrap xl:justify-between justify-center gap-5">
               {/* Thumbnail del video */}
-              {isLoading ? (
-                <div className="md:h-24 h-14 w-45 flex justify-center items-center border border-black/10 rounded-[5px] text-black/50">
-                  <div className="w-12 h-12 border-4 border-t-black border-gray-300 rounded-full animate-spin"></div>
-                </div>
-              ) : (
+              {project.video && (
                 <video
-                  autoPlay
                   muted
                   className={`rounded-[5px] md:h-24 h-14 object-cover cursor-pointer hover:opacity-80 border border-black/10`}
                   src={project.video}
@@ -90,7 +96,7 @@ const Project = () => {
                 <p className="text-5xl font-poppins font-semibold">
                   {project.name}
                 </p>
-                <p>{project.description}</p>
+                <p className="px-5 xl:px-0">{project.description}</p>
               </div>
               <div className="p-5 flex flex-col gap-5 text-center">
                 <p className="text-5xl font-poppins font-semibold">Stack</p>

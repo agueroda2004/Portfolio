@@ -337,10 +337,10 @@ export const backStack = [
   },
   {
     name: "Express",
-    color: "#000000",
+    color: "#252525FF",
     svg: (
       <svg
-        fill="#000000"
+        fill="#252525FF"
         viewBox="0 0 24 24"
         role="img"
         xmlns="http://www.w3.org/2000/svg"
@@ -735,14 +735,14 @@ export const appsOthersStack = [
   },
   {
     name: "Github",
-    color: "#000000",
+    color: "#252525FF",
     svg: (
       <svg
         viewBox="0 0 20 20"
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
-        fill="#000000"
+        fill="#ffffff"
       >
         <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
         <g
@@ -765,7 +765,7 @@ export const appsOthersStack = [
             <g
               id="Dribbble-Light-Preview"
               transform="translate(-140.000000, -7559.000000)"
-              fill="#000000"
+              fill="#FFFFFF"
             >
               {" "}
               <g id="icons" transform="translate(56.000000, 160.000000)">

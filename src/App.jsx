@@ -5,6 +5,8 @@ import Footer from "./components/Layout/Footer";
 import { Route, Routes } from "react-router-dom";
 import Stack from "./Pages/Stack/Stack";
 import Project from "./Pages/Projects/Project";
+import NotFound from "./Pages/Home/NotFound";
+import { Toaster } from "react-hot-toast";
 function App() {
   const heroRef = useRef(null);
   const stackRef = useRef(null);
@@ -33,9 +35,11 @@ function App() {
         />
         <Route path="/stack" element={<Stack />} />
         <Route path="/project/:id" element={<Project />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
 
       <Footer />
+      <Toaster position="top-center" />
     </>
   );
 }

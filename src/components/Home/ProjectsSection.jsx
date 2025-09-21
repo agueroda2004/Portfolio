@@ -27,9 +27,9 @@ const ProjectsSection = forwardRef((props, ref) => {
           <div className="absolute left-0 top-0 h-full w-10 md:w-40 z-10 pointer-events-none bg-gradient-to-r from-white to-transparent" />
           <Marquee speed={150} direction="left">
             <div className="flex">
-              {[...topProjects, ...topProjects].map((card) => (
+              {[...topProjects, ...topProjects].map((card, index) => (
                 <NavLink
-                  key={card.id}
+                  key={index}
                   className="md:w-[700px] w-[500px] mx-4  relative group  transition-all duration-300 cursor-pointer hover:scale-95"
                   to={`/project/${card.id}`}
                 >

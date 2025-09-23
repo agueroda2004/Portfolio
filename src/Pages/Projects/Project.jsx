@@ -126,7 +126,7 @@ const Project = () => {
                 </p>
                 <p className="px-5 xl:px-0">{project.description}</p>
                 {project.video && (
-                  <div className="w-full h-64 xl:h-80 px-2">
+                  <div className="w-full h-50 xl:h-80 px-2">
                     {project.video}
                   </div>
                 )}

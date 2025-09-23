@@ -37,8 +37,7 @@ export const Projects = [
     name: "QuickStay",
     video: (
       <iframe
-        width="560"
-        height="315"
+        className="w-full h-full"
         src="https://www.youtube.com/embed/jlEuzzFmrg4?si=PP4fOB0ubQjKk7WG"
         title="YouTube video player"
         frameborder="0"
@@ -528,8 +527,7 @@ export const Projects = [
     ],
     video: (
       <iframe
-        width="560"
-        height="315"
+        className="w-full h-full"
         src="https://www.youtube.com/embed/IHx8Yh4JOzM?si=L3X2FrgH5XzVGoY2"
         title="YouTube video player"
         frameborder="0"
@@ -1194,8 +1192,7 @@ export const Projects = [
       "A full-stack car rental platform developed to demonstrate my skills in modern web application development. This project uses React for a dynamic user interface, a Node.js backend to handle reservations and vehicle data, and MongoDB for flexible and scalable data storage. It's a clear example of my ability to build a robust, end-to-end application.",
     video: (
       <iframe
-        width="560"
-        height="315"
+        className="w-full h-full"
         src="https://www.youtube.com/embed/vQ8ocj3n9zQ?si=rvQc2msa8KqVm_gd"
         title="YouTube video player"
         frameborder="0"
@@ -1523,8 +1520,7 @@ export const Projects = [
       "A single-page website created for a senior citizens' home as part of a community service project. Built with React for a responsive user experience and styled with Tailwind CSS for a clean, modern design. This project highlights my ability to use technology to serve a social purpose, creating a digital platform that is accessible and easy to navigate for all users.",
     video: (
       <iframe
-        width="560"
-        height="315"
+        className="w-full h-full"
         src="https://www.youtube.com/embed/ZioqNcvBidc?si=co--IEBqOMndaBCk"
         title="YouTube video player"
         frameborder="0"

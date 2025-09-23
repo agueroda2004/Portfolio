@@ -106,7 +106,7 @@ const Header = ({ heroRef, stackRef, aboutRef, projectsRef }) => {
             state.inicio
               ? "bg-transparent"
               : state.stack
-              ? "bg-transparent"
+              ? "bg-transparent border border-white/10"
               : "bg-white/80"
           }
     backdrop-blur-xs transition-all duration-75 relative`}

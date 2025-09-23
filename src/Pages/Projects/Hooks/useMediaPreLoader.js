@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export function useMediaPreLoader(images = [], video = "") {
+export function useMediaPreLoader(images = []) {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
@@ -12,21 +12,9 @@ export function useMediaPreLoader(images = [], video = "") {
         img.onerror = reject;
       });
 
-    const loadVideo = (src) =>
-      new Promise((resolve, reject) => {
-        const videoElement = document.createElement("video");
-        videoElement.preload = "auto";
-        videoElement.src = src;
-        videoElement.onloadeddata = resolve;
-        videoElement.onerror = reject;
-      });
-
     const preload = async () => {
       try {
-        await Promise.all([
-          ...images.map(loadImage),
-          video !== "" && loadVideo(video),
-        ]);
+        await Promise.all([...images.map(loadImage)]);
         setLoaded(true);
       } catch (error) {
         console.log("Error cargando los medios:", error);
@@ -34,7 +22,7 @@ export function useMediaPreLoader(images = [], video = "") {
     };
 
     preload();
-  }, [images, video]);
+  }, [images]);
 
   return loaded;
 }

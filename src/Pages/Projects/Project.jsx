@@ -120,18 +120,18 @@ const Project = () => {
 
             {/* Info */}
             <div className="w-full my-10 grid grid-cols-1 md:grid-cols-2 text-black/50">
-              <div className="py-5 flex flex-col gap-5 xl:border-r text-center xl:text-left xl:pr-5">
+              <div className="py-5 flex flex-col gap-15 xl:border-r text-center xl:text-left xl:pr-5 mb-15">
                 <p className="text-5xl font-poppins font-semibold">
                   {project.name}
                 </p>
                 <p className="px-5 xl:px-0">{project.description}</p>
                 {project.video && (
-                  <div className="w-full h-50 xl:h-80 px-2">
+                  <div className="w-full h-60 xl:h-80 px-2">
                     {project.video}
                   </div>
                 )}
               </div>
-              <div className="p-5 flex flex-col gap-5 text-center">
+              <div className="p-5 flex flex-col gap-5 text-center mb-15">
                 <p className="text-5xl font-poppins font-semibold">Stack</p>
                 <div className="h-10 w-full flex flex-row items-center justify-center">
                   {project.stack.map((stack, index) => (

@@ -25,7 +25,8 @@ const Header = ({ heroRef, stackRef, aboutRef, projectsRef }) => {
   const navHeader = useRef(null);
   const location = useLocation();
   const isProjectPage = useMatch("/project/:id");
-  const className = isProjectPage ? "invert" : "";
+  const isWhite = state.inicio || state.stack || location.pathname === "/stack";
+  const isBlack = !state.inicio || isProjectPage;
 
   function handleClick() {
     toast.success("Working...", {
@@ -102,12 +103,11 @@ const Header = ({ heroRef, stackRef, aboutRef, projectsRef }) => {
     >
       <div
         className={`w-full rounded-[8px] flex flex-row h-[80px] items-center justify-between px-5 shadow-[0_0_25px_rgba(0,0,0,0.3)] border border-gray-950/10
+          ${state.inicio && location.pathname === "/" && "bg-transparent"}
+          ${state.stack && "bg-transparent border border-white/10"}
           ${
-            state.inicio
-              ? "bg-transparent"
-              : state.stack
-              ? "bg-transparent border border-white/10"
-              : "bg-white/80"
+            location.pathname === "/stack" &&
+            "bg-transparent border border-white/10"
           }
     backdrop-blur-xs transition-all duration-75 relative`}
       >
@@ -117,13 +117,36 @@ const Header = ({ heroRef, stackRef, aboutRef, projectsRef }) => {
           className="cursor-pointer"
           to="/"
         >
-          <img
-            src={Logo}
-            alt="logo"
-            className={`${
-              state.inicio ? "" : state.stack ? "" : "invert"
-            } ${className}`}
-          />
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className={`h-10 ${isWhite ? "fill-white" : ""} ${
+              isBlack ? "fill-black" : ""
+            }`}
+          >
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></g>
+            <g id="SVGRepo_iconCarrier">
+              {" "}
+              <path
+                d="M14.9615 5.27473C15.1132 4.7437 14.8058 4.19021 14.2747 4.03849C13.7437 3.88677 13.1902 4.19426 13.0385 4.72529L9.03847 18.7253C8.88675 19.2563 9.19424 19.8098 9.72528 19.9615C10.2563 20.1133 10.8098 19.8058 10.9615 19.2747L14.9615 5.27473Z"
+                fill="current"
+              ></path>{" "}
+              <path
+                d="M5.7991 7.39879C6.13114 7.84012 6.04255 8.46705 5.60123 8.7991L2.40894 11.2009C1.87724 11.601 1.87723 12.399 2.40894 12.7991L5.60123 15.2009C6.04255 15.533 6.13114 16.1599 5.7991 16.6012C5.46705 17.0426 4.84012 17.1311 4.39879 16.7991L1.20651 14.3973C-0.388615 13.1971 -0.388621 10.8029 1.2065 9.60276L4.39879 7.20093C4.84012 6.86889 5.46705 6.95747 5.7991 7.39879Z"
+                fill="current"
+              ></path>{" "}
+              <path
+                d="M18.2009 16.6012C17.8689 16.1599 17.9575 15.533 18.3988 15.2009L21.5911 12.7991C22.1228 12.399 22.1228 11.601 21.5911 11.2009L18.3988 8.7991C17.9575 8.46705 17.8689 7.84012 18.2009 7.39879C18.533 6.95747 19.1599 6.86889 19.6012 7.20093L22.7935 9.60276C24.3886 10.8029 24.3886 13.1971 22.7935 14.3973L19.6012 16.7991C19.1599 17.1311 18.533 17.0426 18.2009 16.6012Z"
+                fill="current"
+              ></path>{" "}
+            </g>
+          </svg>
         </NavLink>
 
         {/* links */}
